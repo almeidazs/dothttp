@@ -1,6 +1,6 @@
 ### Create a new coupon
 
-POST {{BASE_URL}}/{{API_VERSION}}/coupon/create HTTP/1.1
+POST {{BASE_URL}}/{{API_VERSION}}/coupon/create
 
 Content-Type: application/json
 Authorization: Bearer {{ABACATEPAY_API_KEY}}
@@ -16,6 +16,6 @@ Authorization: Bearer {{ABACATEPAY_API_KEY}}
 
 ### List all coupons
 
-GET {{BASE_URL}}/{{API_VERSION}}/coupon/list HTTP/1.1
+GET {{BASE_URL}}/{{API_VERSION}}/coupon/list
 
 Authorization: Bearer {{ABACATEPAY_API_KEY}}

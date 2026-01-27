@@ -1,5 +1,5 @@
 ### Get store details
 
-GET {{BASE_URL}}/{{API_VERSION}}/store/get HTTP/1.1
+GET {{BASE_URL}}/{{API_VERSION}}/store/get
 
 Authorization: Bearer {{ABACATEPAY_API_KEY}}

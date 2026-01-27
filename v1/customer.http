@@ -1,5 +1,5 @@
 ### Create a new customer
-POST {{BASE_URL}}/{{API_VERSION}}/customer/create HTTP/1.1
+POST {{BASE_URL}}/{{API_VERSION}}/customer/create
 
 Content-Type: application/json
 Authorization: Bearer {{ABACATEPAY_API_KEY}}
@@ -13,7 +13,7 @@ Authorization: Bearer {{ABACATEPAY_API_KEY}}
 
 ### List customers
 
-GET {{BASE_URL}}/{{API_VERSION}}/customer/list HTTP/1.1
+GET {{BASE_URL}}/{{API_VERSION}}/customer/list
 
 Content-Type: application/json
 Authorization: Bearer {{ABACATEPAY_API_KEY}}
