@@ -1,6 +1,6 @@
 ### Simulate billing.paid webhook
 
-POST {{BASE_WEBHOOK_URL}}/webhooks/abacatepay?webhookSecret={{WEBHOOK_SECRET}}
+POST {{$dotenv .env BASE_WEBHOOK_URL}}/webhooks/abacatepay?webhookSecret={{$dotenv .env WEBHOOK_SECRET}}
 
 X-Webhook-Signature: ...
 
@@ -25,7 +25,7 @@ X-Webhook-Signature: ...
 
 ### Simulate withdraw.done webhook
 
-POST {{BASE_WEBHOOK_URL}}/webhooks/abacatepay?webhookSecret={{WEBHOOK_SECRET}}
+POST {{$dotenv .env BASE_WEBHOOK_URL}}/webhooks/abacatepay?webhookSecret={{$dotenv .env WEBHOOK_SECRET}}
 
 X-Webhook-Signature: ...
 
@@ -51,7 +51,7 @@ X-Webhook-Signature: ...
 
 ### Simulate withdraw.failed webhook
 
-POST {{BASE_WEBHOOK_URL}}/webhooks/abacatepay?webhookSecret={{WEBHOOK_SECRET}}
+POST {{$dotenv .env BASE_WEBHOOK_URL}}/webhooks/abacatepay?webhookSecret={{$dotenv .env WEBHOOK_SECRET}}
 
 X-Webhook-Signature: ...
 

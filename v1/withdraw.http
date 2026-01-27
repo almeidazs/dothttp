@@ -1,9 +1,9 @@
 ### Create a new withdraw
 
-POST {{BASE_URL}}/{{API_VERSION}}/withdraw/create
+POST {{$dotenv .env BASE_URL}}/{{$dotenv .env API_VERSION}}/withdraw/create
 
 Content-Type: application/json
-Authorization: Bearer {{ABACATEPAY_API_KEY}}
+Authorization: Bearer {{$dotenv .env ABACATEPAY_API_KEY}}
 
 {
     "externalId": "withdraw-1234",
@@ -20,12 +20,12 @@ Authorization: Bearer {{ABACATEPAY_API_KEY}}
 
 @WITHDRAW_ID = withdraw-1234
 
-GET {{BASE_URL}}/{{API_VERSION}}/withdraw/get?externalId={{WITHDRAW_ID}}
+GET {{$dotenv .env BASE_URL}}/{{$dotenv .env API_VERSION}}/withdraw/get?externalId={{WITHDRAW_ID}}
 
-Authorization: Bearer {{ABACATEPAY_API_KEY}}
+Authorization: Bearer {{$dotenv .env ABACATEPAY_API_KEY}}
 
 ### List all withdraws
 
-GET {{BASE_URL}}/{{API_VERSION}}/withdraw/list
+GET {{$dotenv .env BASE_URL}}/{{$dotenv .env API_VERSION}}/withdraw/list
 
-Authorization: Bearer {{ABACATEPAY_API_KEY}}
+Authorization: Bearer {{$dotenv .env ABACATEPAY_API_KEY}}

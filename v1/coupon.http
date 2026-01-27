@@ -1,9 +1,9 @@
 ### Create a new coupon
 
-POST {{BASE_URL}}/{{API_VERSION}}/coupon/create
+POST {{$dotenv .env BASE_URL}}/{{$dotenv .env API_VERSION}}/coupon/create
 
 Content-Type: application/json
-Authorization: Bearer {{ABACATEPAY_API_KEY}}
+Authorization: Bearer {{$dotenv .env ABACATEPAY_API_KEY}}
 
 {
     "code": "DEYVIN_20",
@@ -16,6 +16,6 @@ Authorization: Bearer {{ABACATEPAY_API_KEY}}
 
 ### List all coupons
 
-GET {{BASE_URL}}/{{API_VERSION}}/coupon/list
+GET {{$dotenv .env BASE_URL}}/{{$dotenv .env API_VERSION}}/coupon/list
 
-Authorization: Bearer {{ABACATEPAY_API_KEY}}
+Authorization: Bearer {{$dotenv .env ABACATEPAY_API_KEY}}

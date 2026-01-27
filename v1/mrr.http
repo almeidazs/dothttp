@@ -1,20 +1,20 @@
 ### Get the MRR data
 
-GET {{BASE_URL}}/{{API_VERSION}}/public-mrr/mrr
+GET {{$dotenv .env BASE_URL}}/{{$dotenv .env API_VERSION}}/public-mrr/mrr
 
-Authorization: Bearer {{ABACATEPAY_API_KEY}}
+Authorization: Bearer {{$dotenv .env ABACATEPAY_API_KEY}}
 
 ### Get merchant info
 
-GET {{BASE_URL}}/{{API_VERSION}}/public-mrr/merchant-info
+GET {{$dotenv .env BASE_URL}}/{{$dotenv .env API_VERSION}}/public-mrr/merchant-info
 
-Authorization: Bearer {{ABACATEPAY_API_KEY}}
+Authorization: Bearer {{$dotenv .env ABACATEPAY_API_KEY}}
 
 ### Get revenue by period
 
 @START_DATE = 2026-01-01
 @END_DATE = 2026-01-31
 
-GET {{BASE_URL}}/{{API_VERSION}}/public-mrr/revenue?startDate={{START_DATE}}&endDate={{END_DATE}}
+GET {{$dotenv .env BASE_URL}}/{{$dotenv .env API_VERSION}}/public-mrr/revenue?startDate={{START_DATE}}&endDate={{END_DATE}}
 
-Authorization: Bearer {{ABACATEPAY_API_KEY}}
+Authorization: Bearer {{$dotenv .env ABACATEPAY_API_KEY}}

@@ -1,9 +1,9 @@
 ### Create a new QRCode PIX
 
-POST {{BASE_URL}}/{{API_VERSION}}/pixQrCode/create
+POST {{$dotenv .env BASE_URL}}/{{$dotenv .env API_VERSION}}/pixQrCode/create
 
 Content-Type: application/json
-Authorization: Bearer {{ABACATEPAY_API_KEY}}
+Authorization: Bearer {{$dotenv .env ABACATEPAY_API_KEY}}
 
 {
     "amount": 1000,
@@ -24,10 +24,10 @@ Authorization: Bearer {{ABACATEPAY_API_KEY}}
 
 @QRCODE_PIX_ID = "YOUR_ID_HERE"
 
-POST {{BASE_URL}}/{{API_VERSION}}/pixQrCode/simulate-payment?id={{QRCODE_PIX_ID}}
+POST {{$dotenv .env BASE_URL}}/{{$dotenv .env API_VERSION}}/pixQrCode/simulate-payment?id={{QRCODE_PIX_ID}}
 
 Content-Type: application/json
-Authorization: Bearer {{ABACATEPAY_API_KEY}}
+Authorization: Bearer {{$dotenv .env ABACATEPAY_API_KEY}}
 
 {
     "metadata": {
@@ -37,6 +37,6 @@ Authorization: Bearer {{ABACATEPAY_API_KEY}}
 
 ### Get QRCode PIX status by ID
 
-GET {{BASE_URL}}/{{API_VERSION}}/pixQrCode/check?id={{QRCODE_PIX_ID}}
+GET {{$dotenv .env BASE_URL}}/{{$dotenv .env API_VERSION}}/pixQrCode/check?id={{QRCODE_PIX_ID}}
 
-Authorization: Bearer {{ABACATEPAY_API_KEY}}
+Authorization: Bearer {{$dotenv .env ABACATEPAY_API_KEY}}

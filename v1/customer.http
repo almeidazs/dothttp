@@ -1,8 +1,8 @@
 ### Create a new customer
-POST {{BASE_URL}}/{{API_VERSION}}/customer/create
+POST {{$dotenv .env BASE_URL}}/{{$dotenv .env API_VERSION}}/customer/create
 
 Content-Type: application/json
-Authorization: Bearer {{ABACATEPAY_API_KEY}}
+Authorization: Bearer {{$dotenv .env ABACATEPAY_API_KEY}}
 
 {
     "name": "Daniel Lima",
@@ -13,7 +13,7 @@ Authorization: Bearer {{ABACATEPAY_API_KEY}}
 
 ### List customers
 
-GET {{BASE_URL}}/{{API_VERSION}}/customer/list
+GET {{$dotenv .env BASE_URL}}/{{$dotenv .env API_VERSION}}/customer/list
 
 Content-Type: application/json
-Authorization: Bearer {{ABACATEPAY_API_KEY}}
+Authorization: Bearer {{$dotenv .env ABACATEPAY_API_KEY}}

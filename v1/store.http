@@ -1,5 +1,5 @@
 ### Get store details
 
-GET {{BASE_URL}}/{{API_VERSION}}/store/get
+GET {{$dotenv .env BASE_URL}}/{{$dotenv .env API_VERSION}}/store/get
 
-Authorization: Bearer {{ABACATEPAY_API_KEY}}
+Authorization: Bearer {{$dotenv .env ABACATEPAY_API_KEY}}
