@@ -56,7 +56,7 @@ Por exemplo, criar um QRCode PIX na v1
 POST {{BASE_URL}}/{{API_VERSION}}/pixQrCode/create
 
 Content-Type: application/json
-Authorization: Bearer {{ABACATE_API_KEY}}
+Authorization: Bearer {{ABACATEPAY_API_KEY}}
 
 {
   "amount": 1000
