@@ -1,0 +1,31 @@
+### Create a new withdraw
+
+POST {{BASE_URL}}/{{API_VERSION}}/withdraw/create HTTP/1.1
+
+Content-Type: application/json
+Authorization: Bearer {{ABACATEPAY_API_KEY}}
+
+{
+    "externalId": "withdraw-1234",
+    "method": "PIX",
+    "amount": 5000,
+    "pix": {
+        "type": "CPF",
+        "key": "123.456.789-01"
+    },
+    "description": "Saque para conta principal"
+}
+
+### Get withdraw details
+
+@WITHDRAW_ID = withdraw-1234
+
+GET {{BASE_URL}}/{{API_VERSION}}/withdraw/get?externalId={{WITHDRAW_ID}} HTTP/1.1
+
+Authorization: Bearer {{ABACATEPAY_API_KEY}}
+
+### List all withdraws
+
+GET {{BASE_URL}}/{{API_VERSION}}/withdraw/list HTTP/1.1
+
+Authorization: Bearer {{ABACATEPAY_API_KEY}}
