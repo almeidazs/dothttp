@@ -1,0 +1,21 @@
+### Create a new coupon
+
+POST {{BASE_URL}}/{{API_VERSION}}/coupon/create HTTP/1.1
+
+Content-Type: application/json
+Authorization: Bearer {{ABACATEPAY_API_KEY}}
+
+{
+    "code": "DEYVIN_20",
+    "discountKind": "PERCENTAGE",
+    "discount": 123,
+    "notes": "Cupom de desconto pro meu público",
+    "maxRedeems": -1,
+    "metadata": {}
+}
+
+### List all coupons
+
+GET {{BASE_URL}}/{{API_VERSION}}/coupon/list HTTP/1.1
+
+Authorization: Bearer {{ABACATEPAY_API_KEY}}
