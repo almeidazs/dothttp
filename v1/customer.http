@@ -1,0 +1,19 @@
+### Create a new customer
+POST {{BASE_URL}}/{{API_VERSION}}/customer/create HTTP/1.1
+
+Content-Type: application/json
+Authorization: Bearer {{ABACATEPAY_API_KEY}}
+
+{
+    "name": "Daniel Lima",
+    "taxId": "123.456.789-01",
+    "cellphone": "(11) 4002-8922",
+    "email": "daniel_lima@abacatepay.com"
+}
+
+### List customers
+
+GET {{BASE_URL}}/{{API_VERSION}}/customer/list HTTP/1.1
+
+Content-Type: application/json
+Authorization: Bearer {{ABACATEPAY_API_KEY}}
