@@ -37,7 +37,8 @@ Exemplo, `v1/environments/prod.env`.
 API_VERSION=v1
 WEBHOOK_SECRET=abc_my_secret
 ABACATEPAY_API_KEY=abc_prod_xxx
-BASE_URL=https://api.abacatepay.com/
+BASE_URL=https://api.abacatepay.com
+BASE_WEBHOOK_URL=http://localhost:3000
 ```
 
 <div align="center">
@@ -53,10 +54,10 @@ Por exemplo, criar um QRCode PIX na v1
 ```http
 ### Create QRCode PIX
 
-POST {{BASE_URL}}/{{API_VERSION}}/pixQrCode/create
+POST {{$dotenv .env BASE_URL}}/{{$dotenv .env API_VERSION}}/pixQrCode/create
 
 Content-Type: application/json
-Authorization: Bearer {{ABACATEPAY_API_KEY}}
+Authorization: Bearer {{$dotenv .env ABACATEPAY_API_KEY}}
 
 {
   "amount": 1000
@@ -72,7 +73,7 @@ Os arquivos **.http** também incluem exemplos para simular webhooks localmente.
 
 ```http
 ### Simular webhook billing.paid
-POST {{BASE_WEBHOOK_URL}}/webhooks/abacatepay?webhookSecret={{WEBHOOK_SECRET}}
+POST {{$dotenv .env BASE_WEBHOOK_URL}}/webhooks/abacatepay?webhookSecret={{$dotenv .env WEBHOOK_SECRET}}
 
 X-Webhook-Signature: ...
 
@@ -121,25 +122,20 @@ As requisições são **organizadas por versão da API**, respeitando os limites
 
 ```txt
 ├─ v1/
-│  ├─ environments/
-│  │  ├─ prod.env
-│  │  └─ dev.env
 │  ├─ billing.http
 │  ├─ pix.http
-│  ├─ payouts.http
-│  ├─ webhooks.http
+│  ├─ payout.http
+│  ├─ webhook.http
 │  └─ ...
 │
 ├─ v2/
-│  ├─ environments/
-│  │  ├─ prod.env
-│  │  └─ dev.env
-│  ├─ billing.http
+│  ├─ checkout.http
 │  ├─ pix.http
-│  ├─ payouts.http
-│  ├─ webhooks.http
+│  ├─ payout.http
+│  ├─ webhook.http
 │  └─ ...
 │
+└─ .env
 └─ README.md
 ```
 
