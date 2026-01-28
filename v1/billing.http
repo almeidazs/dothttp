@@ -1,0 +1,47 @@
+### Create a new billing
+
+POST {{$dotenv .env BASE_URL}}/{{$dotenv .env API_VERSION}}/billing/create
+
+Content-Type: application/json
+Authorization: Bearer {{$dotenv .env ABACATEPAY_API_KEY}}
+
+{
+    "frequency": "ONE_TIME",
+    "methods": [
+        "PIX"
+    ],
+    "products": [
+        {
+            "externalId": "prod-1234",
+            "name": "Assinatura de Programa Fitness",
+            "description": "Acesso ao programa fitness premium por 1 mês.",
+            "quantity": 2,
+            "price": 2000
+        }
+    ],
+    "returnUrl": "https://example.com/billing",
+    "completionUrl": "https://example.com/completion",
+    "customerId": "cust_abcdefghij",
+    "customer": {
+        "name": "Daniel Lima",
+        "cellphone": "(11) 4002-8922",
+        "email": "daniel_lima@abacatepay.com",
+        "taxId": "123.456.789-01"
+    },
+    "allowCoupons": false,
+    "coupons": [
+        "ABKT10",
+        "ABKT5",
+        "PROMO10"
+    ],
+    "externalId": "seu_id_123",
+    "metadata": {
+        "externalId": "123"
+    }
+}
+
+### List billings
+
+GET {{$dotenv .env BASE_URL}}/{{$dotenv .env API_VERSION}}/billing/list
+
+Authorization: Bearer {{$dotenv .env ABACATEPAY_API_KEY}}
